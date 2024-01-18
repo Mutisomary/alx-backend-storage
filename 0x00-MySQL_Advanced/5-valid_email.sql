@@ -1,4 +1,3 @@
--- Assuming you have a table named 'user' with columns 'user_id', 'email', and 'valid_email'
 -- This trigger will reset 'valid_email' to 0 when 'email' is updated
 
 DELIMITER $$
