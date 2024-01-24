@@ -30,10 +30,10 @@ class Cache:
 
         return data
 
-    def get_str(self, key: str) -> Union[str, None]:
+    def get_str(self, key) -> str:
         """use cache.get with string conversion function"""
-        return self.get(key, fn=lambda x: x.decode('utf-8'))
+        return self.get(key, str)
 
-    def get_int(self, key: str) -> Union[int, None]:
+    def get_int(self, key) -> int:
         """Use Cache.get with int conversion function"""
-        return self.get(key, fn=int)
+        return self.get(key, int)
