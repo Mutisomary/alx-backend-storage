@@ -20,7 +20,8 @@ class Cache:
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, fn: Callable = None) -> Union[str, bytes, int, float, None]:
+    def get(self, key: str, fn: Callable = None) -> Union[str, bytes,
+                                                          int, float, None]:
         """retrieve data from redis"""
         data = self._redis(key)
         """if key doesn't exist, return none"""
@@ -28,7 +29,7 @@ class Cache:
             return None
         if fn is not None:
             data = fn(data)
-            
+
         return data
 
     def get_str(self, key: str) -> Union[str, None]:
