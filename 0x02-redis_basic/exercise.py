@@ -25,9 +25,7 @@ class Cache:
         """retrieve data from redis"""
         data = self._redis(key)
         """if key doesn't exist, return none"""
-        if data is None:
-            return None
-        if fn is not None:
+        if fn:
             data = fn(data)
 
         return data
